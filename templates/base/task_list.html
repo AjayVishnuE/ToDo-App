@@ -11,12 +11,15 @@
 
 <table>
     <tr>
-        <th>item</th>
-        <th></th>
-        <th></th>
+        <th>Item</th>
+        <th>Finish Date</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     {% for task in object_list %}
     <tr>
+        <td>{{task.title}}</td>
         <td>{{task.title}}</td>
         <td><a href = "{% url 'task' task.id %}">view</a></td>
         <td><a href = "{% url 'task-update' task.id %}">Edit</a></td>
