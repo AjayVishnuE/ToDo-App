@@ -1,31 +1,90 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
 {% if request.user.is_authenticated %}
-    <p>{{request.user}}</p>
-    <a href="{% url 'logout' %}">logout</a>
+<div class="nametitlesec">
+    <p>Hello {{request.user|title}},</p>
+    <a href = "{% url 'task-create' %}">Add Task</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</div>
 {% else %}
     <a href="{% url 'login' %}">login</a>
 {% endif %}
-
+<h3>You have <i>{{count}}</i> uncompleted tasks</h3>
 <h1>My to do list{{color}}</h1>
-<a href = "{% url 'task-create' %}">Add Task</a>
 
-
-<table>
-    <tr>
-        <th>Item</th>
-        <th>Finish Date</th>
-        <th>View</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-    {% for task in object_list %}
-    <tr>
-        <td>{{task.title}}</td>
-        <td>{{task.title}}</td>
-        <td><a href = "{% url 'task' task.id %}">view</a></td>
-        <td><a href = "{% url 'task-update' task.id %}">Edit</a></td>
-        <td><a href = "{% url 'task-delete' task.id %}">Delete</a></td>
-    </tr>
+<div class="task-items-wrapper">
+    <div class="task-header">
+        <div class="col1">Task ToDo</div>
+        <div class="col2">Status</div>
+        <div class="col3">Allotted Duration</div>
+        <div class="col4">Edit</div>
+        <div class="col5">Delete</div>
+    </div>
+    {% for task in tasks %}
+        <div class="task-wrapper">
+            {% if task.complete %}
+                <div class="task-title">
+                    <div class="task-complete-icon">
+                        <div class="col1">
+                            <p><a href="{% url 'task' task.id %}">{{task}}</a></p>
+                        </div>
+                        <div class="col2">
+                            <p>Completed</p>
+                        </div>
+                        <div class="col3">
+                            <p>{{task.completiondate|timeuntil:task.create}}</p>
+                        </div>                        
+                        <div class="col4">
+                            <a href = "{% url 'task-update' task.id %}">
+                                <img src="{% static 'images/Edit.png' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="col5">
+                            <a href = "{% url 'task-delete' task.id %}">
+                                <img src="{% static 'images/Delete.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% comment %} {% if instance.remainingdays %}
+                <div>
+                    <p>Hello</p>
+                    <p><a href="{% url 'task-update' task.id %}">{{task}}</a></p>
+                </div> {% endcomment %}
+            {% else %}
+                <div class="task-title">
+                    <div class="task-incomplete-icon">
+                        <div class="col1">
+                            <p><a href="{% url 'task' task.id %}">{{task}}</a></p>
+                        </div>
+                        <div class="col2">
+                            <p>Not Completed</p>
+                        </div>
+                        <div class="col3">
+                            <p>{{task.completiondate|timeuntil:task.create}}</p>
+                        </div>
+                        <div class="col4">
+                            <a href = "{% url 'task-update' task.id %}">
+                                <img src="{% static 'images/Edit.png' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="col5">
+                            <a href = "{% url 'task-delete' task.id %}">
+                                <img src="{% static 'images/Delete.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
     {% empty %}
-    <h3>No items in list</h3>
+        <h3>No items in list</h3>
     {% endfor %}
-</table>
+</div>
+
+
+</table> 
+
+{% endblock content %}

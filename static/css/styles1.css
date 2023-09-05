@@ -1,0 +1,81 @@
+body{
+    background-color: #cbeaea;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: blueviolet;
+}
+
+img{
+    height: 30px;
+    width: 30px;
+}
+
+.container{
+    padding: 40px 30px;
+    border-radius: 15px;
+    width:fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(237, 177, 155);
+}
+
+.nametitlesec{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    gap:20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-items-wrapper{
+
+}
+
+.task-complete-icon, .task-incomplete-icon{
+    display: flex;
+    width: 100%;
+}
+
+.task-header{
+    display: flex;
+}
+
+.col1, .col2, .col3 {
+    width: 150px;
+}
+
+.col4, .col5{
+    width:50px
+}
+
+.list-table{
+    width: 100%;
+    padding: 0px;
+    border: 1px solid rgb(255, 0, 0);
+    border-collapse: collapse;
+
+}
+
+.list-table tr {
+    padding: 10px;
+}
+
+table, th, tr{
+    border: 1px solid;
+}
+
+.list-table > tr {
+    height: 20px;
+}
