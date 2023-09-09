@@ -30,8 +30,8 @@ SECRET_KEY = 'django-insecure-hlm#wp393+37!8!kx80=0epxx&d6z5*55&y8&1=b@0b1s1^zdj
 DEBUG = True
 
 ALLOWED_HOSTS = ['todoappbyav.up.railway.app', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['todoappbyav.up.railway.app', '127.0.0.1']
-CORS_ORIGIN_WHITELIST = ['todoappbyav.up.railway.app', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://todoappbyav.up.railway.app', '127.0.0.1']
+CORS_ORIGIN_WHITELIST = ['https://todoappbyav.up.railway.app', '127.0.0.1']
 
 # Application definition
 
