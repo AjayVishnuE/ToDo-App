@@ -1,1 +1,18 @@
-<h1>Task: {{task}} </h1>
+{% extends 'base/main.html' %}
+{% block content %}
+
+<h1 style="color: rgb(11, 246, 230);">Task Name: {{task}} </h1>
+
+<h2 style="color: rgb(11, 246, 230);">Task Description: {{task.description}} </h2>
+
+<h3 style="color: rgb(11, 246, 230);">Task Deadline: {{task.completiondate}} </h3>
+
+{% if task.complete %}
+    <h3 style="color: rgb(11, 246, 230);">Completed</h3>
+{% else %}
+    <h3 style="color: rgb(11, 246, 230);">Not Completed</h3>
+{% endif %}
+<br>
+<a href = "{% url 'tasks' %}">Go Back</a>
+
+{% endblock content %}

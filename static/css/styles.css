@@ -1,5 +1,8 @@
 body{
-    background-color: #cbeaea;
+    background-image: url('../../static/images/background.jpg');
+    overflow: hidden;
+    background-size:cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -9,12 +12,17 @@ body{
 
 a{
     text-decoration: none;
-    color: blueviolet;
+    color: rgb(255, 255, 255);
+}
+
+p{
+    color: rgb(11, 246, 230);
 }
 
 img{
     height: 30px;
     width: 30px;
+    border-radius: 5px;
 }
 
 .container{
@@ -26,11 +34,21 @@ img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(237, 177, 155);
+    background: rgba( 239, 12, 12, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .nametitlesec{
-    background-color: rgb(255, 255, 255);
+    background: rgba( 255, 255, 255, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     width: 100%;
     border-radius: 10px;
     display: flex;
@@ -46,10 +64,13 @@ img{
 .task-complete-icon, .task-incomplete-icon{
     display: flex;
     width: 100%;
+    height: 50px;
 }
 
 .task-header{
+    height: 40px;
     display: flex;
+    color: rgb(238, 255, 0);
 }
 
 .col1, .col2, .col3 {
@@ -78,4 +99,11 @@ table, th, tr{
 
 .list-table > tr {
     height: 20px;
+}
+
+.btn{
+    background-color: beige;
+    padding: 8px 15px;
+    font-size: 15px;
+    border-radius: 10px;
 }

@@ -5,8 +5,8 @@
 
 <form method="POST">
     {% csrf_token %}
-    <p>{{form}}</p>
-    <input type="submit" value="Register">
+    <p>{{form.as_p}}</p>
+    <input class="btn" type="submit" value="Register">
 </form>
 
 <p>Already have an account? <a href ="{% url 'login' %}">Login Here</a></p>

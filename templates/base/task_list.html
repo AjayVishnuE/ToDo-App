@@ -11,8 +11,8 @@
 {% else %}
     <a href="{% url 'login' %}">login</a>
 {% endif %}
-<h3>You have <i>{{count}}</i> uncompleted tasks</h3>
-<h6>{{ day }}</h6>
+<h3 style="color:rgb(11, 246, 230)">You have <i>{{count}}</i> uncompleted tasks</h3>
+{% comment %} <h6>{{ day }}</h6> {% endcomment %}
 <h1>My to do list</h1>
 
 <div class="task-items-wrapper">
@@ -39,12 +39,12 @@
                         </div>                        
                         <div class="col4">
                             <a href = "{% url 'task-update' task.id %}">
-                                <img src="{% static 'images/Edit.png' %}" alt="edit"/>
+                                <img class="imgs" src="{% static 'images/Edit.png' %}" alt="edit"/>
                             </a>
                         </div>
                         <div class="col5">
                             <a href = "{% url 'task-delete' task.id %}">
-                                <img src="{% static 'images/Delete.png' %}" alt="delete"/>
+                                <img class="imgs" src="{% static 'images/Delete.png' %}" alt="delete"/>
                             </a>
                         </div>
                     </div>
@@ -68,12 +68,12 @@
                         </div>
                         <div class="col4">
                             <a href = "{% url 'task-update' task.id %}">
-                                <img src="{% static 'images/Edit.png' %}" alt="edit"/>
+                                <img class="imgs" src="{% static 'images/Edit.png' %}" alt="edit"/>
                             </a>
                         </div>
                         <div class="col5">
                             <a href = "{% url 'task-delete' task.id %}">
-                                <img src="{% static 'images/Delete.png' %}" alt="delete"/>
+                                <img class="imgs" src="{% static 'images/Delete.png' %}" alt="delete"/>
                             </a>
                         </div>
                     </div>
