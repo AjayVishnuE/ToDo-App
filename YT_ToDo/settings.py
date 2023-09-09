@@ -31,6 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['todoappbyav.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['todoappbyav.up.railway.app', '127.0.0.1']
+CORS_ORIGIN_WHITELIST = ['todoappbyav.up.railway.app', '127.0.0.1']
 
 # Application definition
 
