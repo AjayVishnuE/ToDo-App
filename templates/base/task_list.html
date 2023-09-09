@@ -38,11 +38,9 @@
                             <p>{{task.completiondate|timeuntil:task.create}}</p>
                         </div>                        
                         <div class="col4">
-                            <p>
-                                <a href = "{% url 'task-update' task.id %}">
-                                    <img src="{% static 'images/Edit.png' %}" alt="edit"/>
-                                </a>
-                            </p>
+                            <a href = "{% url 'task-update' task.id %}">
+                                <img src="{% static 'images/Edit.png' %}" alt="edit"/>
+                            </a>
                         </div>
                         <div class="col5">
                             <a href = "{% url 'task-delete' task.id %}">
