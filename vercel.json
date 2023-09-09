@@ -1,0 +1,25 @@
+{
+    "version" : 2,
+    "builds" : [
+        {
+            "src" : "YT_ToDo/wsgi.py",
+            "use" : "@vercel/python",
+            "config" : { "maxLamdaSize": "15mb", "runtime" : "python3.10" }
+        },
+        {
+            "src" : "build_files.sh",
+            "use" : "@vercel/static_build",
+            "config" : { "distDir": "staticfiles_build" }
+        }
+    ],
+    "routes" : [
+        {
+            "src" : "/static/(.*)",
+            "dest" : "/static/$1"
+        },
+        {
+            "src" : "/(.*)",
+            "dest" : "YT_ToDo/wsgi.py"
+        }
+    ]
+}

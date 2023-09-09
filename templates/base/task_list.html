@@ -12,7 +12,8 @@
     <a href="{% url 'login' %}">login</a>
 {% endif %}
 <h3>You have <i>{{count}}</i> uncompleted tasks</h3>
-<h1>My to do list{{color}}</h1>
+<h6>{{ day }}</h6>
+<h1>My to do list</h1>
 
 <div class="task-items-wrapper">
     <div class="task-header">
@@ -48,11 +49,11 @@
                         </div>
                     </div>
                 </div>
-            {% comment %} {% if instance.remainingdays %}
+            {% elif instance.remainingdays %}
                 <div>
                     <p>Hello</p>
                     <p><a href="{% url 'task-update' task.id %}">{{task}}</a></p>
-                </div> {% endcomment %}
+                </div> 
             {% else %}
                 <div class="task-title">
                     <div class="task-incomplete-icon">

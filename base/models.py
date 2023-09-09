@@ -17,10 +17,10 @@ class Task(models.Model):
     def __str__(self):
         return self.title
     
-    def remainingdays(self):
-        # today = date.today()
-        # result = (self.completiondate - today).days
-        return (date.today() - self.completiondate).days == 0
+    @property
+    def remaining_days(self):
+        remaining = (self.completiontime - datetime.datetime.today()).days
+        return remaining
     # def clean(self):
     #     self.remainingdays = (dt.strptime(self.completiondate, "%Y/%m/%d") - dt.strptime(self.create, "%Y/%m/%d")).days
     #     print(self.remainingdays)

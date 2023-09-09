@@ -10,6 +10,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
 from .models import Task
+import datetime
+from datetime import date
 
 class CustomLoginView(LoginView):
     template_name = "base/login.html"
@@ -34,12 +36,11 @@ class RegisterPage(FormView):
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
             return redirect('tasks')
-        return super(RegisterPage, self).get()
+        return super(RegisterPage, self).get(self)
     
 class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'tasks'
-
     def get_queryset(self):
         qs = super().get_queryset()
         return qs.filter(user=self.request.user)
