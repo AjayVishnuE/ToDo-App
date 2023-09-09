@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-hlm#wp393+37!8!kx80=0epxx&d6z5*55&y8&1=b@0b1s1^zdj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['todoappbyav.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['https://todoappbyav.up.railway.app', '127.0.0.1']
 
 
 # Application definition
@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
